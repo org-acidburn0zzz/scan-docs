@@ -37,6 +37,13 @@ ShiftLeft Scan is distributed as both a container [image](https://hub.docker.com
     docker run --rm -e "WORKSPACE=${PWD}" -v "$PWD:/app" shiftleft/sast-scan scan --src /app --type python
     ```
 
+=== "Windows with WSL2"
+    Follow these [instructions](wsl2.md) to run scan on Windows with WSL2 and podman.
+
+    ```bash
+    podman run --rm -e "WORKSPACE=${PWD}" -v "$PWD:/app:cached" shiftleft/sast-scan scan
+    ```
+
 === "Windows"
     On Windows use `%cd%` instead of \$PWD to run the scan with Command prompt
 
@@ -64,6 +71,7 @@ ShiftLeft Scan is distributed as both a container [image](https://hub.docker.com
 
     Don't forget the slash (/) before \$PWD for git-bash!
 
+<br>
 To scan multiple projects, separate the types with a comma. Here reports will be put in the directory specified by `--out_dir`
 
 ```bash
